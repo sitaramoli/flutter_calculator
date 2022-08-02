@@ -1,5 +1,6 @@
 import 'package:calculator/presentation/resources/color_constants.dart';
 import 'package:calculator/presentation/state_management/calculator_riverpod.dart';
+import 'package:calculator/presentation/widgets/concave_decoration.dart';
 import 'package:calculator/presentation/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -52,17 +53,10 @@ class _HomeState extends ConsumerState<Home> {
         return Container(
           width: double.infinity,
           padding: const EdgeInsets.only(left: 10, bottom: 10),
-          decoration: BoxDecoration(
-            color: ColorConstants.NUMBER_BUTTON,
-            borderRadius: BorderRadius.circular(10),
-            boxShadow: const [
-              BoxShadow(
-                color: ColorConstants.DARK_SHADOW,
-                blurRadius: 3,
-                spreadRadius: 5,
-              ),
-            ],
-          ),
+          decoration: ConcaveDecoration(
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(15)),
+              depression: 10),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.end,
             crossAxisAlignment: CrossAxisAlignment.start,
